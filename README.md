@@ -10,7 +10,24 @@ A small browser extension that lets you skip forward or backward in a YouTube vi
 
 A small panel over the player confirms each skip: how far the video actually moved in large type (`+10 s`), where you landed (`4:32 / 12:05`), and a thin progress bar. Quick repeated skips on the same video add up (`+30 s`). Near the end or start it shows the real, shorter jump, or `End` / `Start` when there's nowhere left to go. It's a translucent grey panel with a thin light border and system fonts, with no icons. It sits in the centre of the player by default, and its position and size can be changed in the settings. YouTube's own control bar (red timeline and time) appears at the same time, as if you had moved the mouse.
 
-![The toast over the player after two quick forward skips: "+20 s", with "0:52 / 2:00" below](docs/toast.png)
+**Version 1.3.1** (from `manifest.json`; also shown on the options page)
+
+## What's new in 1.3.1
+
+- The options page shows its version number.
+- The toast appears without a fade when "Reduce motion" is on.
+- The project is now called ext-yt-scroll-skip; the Firefox add-on ID is unchanged, so installs keep updating.
+
+1.3.0 added YouTube's control bar while scrolling and the trackpad timeline. Older changes are in [CHANGELOG.md](CHANGELOG.md).
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/toast.png" alt="The toast over the player after two quick forward skips: &quot;+20 s&quot;, with &quot;0:52 / 2:00&quot; below" width="420"><br>The toast over the player after two quick forward skips: "+20 s", with "0:52 / 2:00" below</td>
+    <td align="center"><img src="docs/options.png" alt="The options page" width="420"><br>The options page</td>
+  </tr>
+</table>
 
 ## Features
 
@@ -74,8 +91,6 @@ Right-click the toolbar icon → **Options** (or use the **Details → Extension
 | Overlay size     | Medium  | Extra small (0.65×), Small (0.8×), Medium, Large (1.3×) or Extra large (1.6×) |
 
 An invalid skip length (outside 1–600) is rejected and the previous value is kept. If you used 1.2.x, your old "seconds per skip" is carried over to both directions when the extension updates.
-
-![The options page](docs/options.png)
 
 Finer tuning (the gesture gap, the minimum gesture distance, how long skips keep adding up, the end guard, volume and speed steps) is in the constants at the top of `content.js`.
 

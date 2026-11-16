@@ -574,6 +574,12 @@ test('options page shows the stored settings', async () => {
   assert.deepEqual(values, { enabled: true, skipForward: '15', invert: true, modifierControls: false });
 });
 
+test('options page shows the manifest version', async () => {
+  await openOptions();
+  const manifest = JSON.parse(readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'manifest.json'), 'utf8'));
+  assert.equal(await page.textContent('#version'), `Version ${manifest.version}`);
+});
+
 test('options page saves checkbox, number and select changes', async () => {
   await openOptions();
   await page.selectOption('#toastPosition', 'top');

@@ -6,6 +6,10 @@ Releases follow the project's git tags. Entries were reconstructed from the comm
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-11-12
+
+- The options page shows its version (read from `manifest.json`)
+- README: current version, "What's new" and the screenshots as a captioned grid
 - The toast appears without a fade when "Reduce motion" is on
 - Renamed the project to **ext-yt-scroll-skip** (GitHub repo, package name, release zip, toast
   element id, and the display name: extension name, toolbar tooltip, options page, README). The Firefox add-on ID stays `yt-scroll-skip@zetterstrom`, so existing installs keep

@@ -1,6 +1,8 @@
 /* global YSS_DEFAULTS */
 const fields = Object.keys(YSS_DEFAULTS).map((key) => document.getElementById(key));
 const status = document.getElementById('status');
+// The version comes from manifest.json, the one place it is set.
+document.getElementById('version').textContent = `Version ${chrome.runtime.getManifest().version}`;
 let statusTimer = null;
 // The values currently shown, so an invalid entry can go back to what was there before.
 const current = { ...YSS_DEFAULTS };
